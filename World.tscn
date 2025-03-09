@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1ahwpdngcf2k"]
+[gd_scene load_steps=5 format=3 uid="uid://b1ahwpdngcf2k"]
 
 [ext_resource type="PackedScene" uid="uid://dtvvq8tqx18e7" path="res://Player.tscn" id="1_c6gwx"]
+[ext_resource type="PackedScene" uid="uid://xlq32kaopr4y" path="res://FishJamText.tscn" id="2_2dftf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2dftf"]
-size = Vector3(16, 1, 16)
+size = Vector3(32, 1, 32)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bcbcq"]
-size = Vector3(16, 1, 16)
+size = Vector3(32, 1, 32)
 
 [node name="World" type="Node3D"]
 
@@ -21,3 +22,9 @@ mesh = SubResource("BoxMesh_bcbcq")
 
 [node name="Player" parent="." instance=ExtResource("1_c6gwx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5714, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.754446, 0.656362, 0, -0.656362, 0.754446, 0, 9.53311, 11.5277)
+
+[node name="FishJamText" parent="." instance=ExtResource("2_2dftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.71879, 0)

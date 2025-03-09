@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://xlq32kaopr4y"]
+
+[ext_resource type="Script" uid="uid://cv86byrax7npd" path="res://Scripts/Label.cs" id="1_ug4oy"]
+
+[sub_resource type="TextMesh" id="TextMesh_2b0n0"]
+text = "This is a test"
+font_size = 48
+
+[node name="FishJamText" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("TextMesh_2b0n0")
+
+[node name="TextChangeTimer" type="Timer" parent="."]
+autostart = true
+script = ExtResource("1_ug4oy")
+
+[connection signal="timeout" from="TextChangeTimer" to="TextChangeTimer" method="_on_timeout"]
